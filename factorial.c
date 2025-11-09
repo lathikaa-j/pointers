@@ -1,16 +1,17 @@
+
 #include<stdio.h>
-int factorial(int *p1)
+int factorial(int n, int *p1)
 {
-    int fact=1;
-    for(int i=1; i<=*p1;i++ )
-        fact= fact*i;
-    return fact;
+    *p1 =1;
+    for(int i=1; i<=n;i++ )
+        *p1= *p1*i;
+    return *p1;
 }
 int main()
 {
-    int n1;
+    int n1,fact;
     printf("Enter the number : \n");
     scanf("%d", &n1);
-    int res = factorial(&n1);
-    printf("The factorial of %d is %d",n1,res);
+    int res = factorial(n1, &fact);
+    printf("The factorial of %d is %d \n", n1,res);
 }
